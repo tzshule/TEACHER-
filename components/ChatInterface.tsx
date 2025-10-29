@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { ChatMessage } from '../types';
 import Message from './Message';
 import LoadingSpinner from './LoadingSpinner';
+import { LOGO_URL } from '../constants';
 
 interface ChatInterfaceProps {
   messages: ChatMessage[];
@@ -49,9 +50,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ messages, isLoading, erro
           {isLoading && (
             <div className="flex items-start space-x-4">
                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center">
-                 <svg className="w-5 h-5 text-amber-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.311a7.5 7.5 0 01-7.5 0c-1.278 0-2.492.213-3.68.608a11.96 11.96 0 013.814-5.013m2.625-7.185a5.25 5.25 0 014.288 0" />
-                 </svg>
+                 <img src={LOGO_URL} alt="Mwalimu AI is thinking" className="w-5 h-5" />
                </div>
               <div className="flex items-center space-x-2 bg-slate-800 rounded-lg p-3">
                 <LoadingSpinner />
